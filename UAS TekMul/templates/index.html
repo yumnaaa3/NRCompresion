@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRCompress- Kompresi File dengan Cepat dan Efisien</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Floating Circles -->
+    
+
+    <!-- Rotating Circles -->
+    <div class="rotating-circle rotate-1"></div>
+    <div class="rotating-circle rotate-2"></div>
+    <div class="rotating-circle rotate-3"></div>
+
+    <!-- Beach-themed decorative elements -->
+    
+
+    <!-- Add cute emoji decorations -->
+    
+
+    <!-- Add floating flowers -->
+    
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="logo">
+                <h1>NRCompress</h1>
+            </div>
+            <h1>Kompresi File dengan Cepat dan Efisien</h1>
+            <p>Kompresi file Anda dengan berbagai algoritma canggih untuk hasil optimal</p>
+        </div>
+        <!-- Cute Graphic Elements -->
+        <div class="graphic-element graphic-1">
+            <img src="{{ url_for('static', filename='folder-icon.png') }}" alt="Folder Icon">
+        </div>
+        <div class="graphic-element graphic-2">
+            <img src="{{ url_for('static', filename='compress-icon.png') }}" alt="Compress Icon">
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section" id="upload">
+        <div class="container">
+            <h2>Kompresi File Anda</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="upload-area" id="dropZone">
+                    <input type="file" id="fileInput" accept=".txt,.docx,.pdf,.jpg,.jpeg,.png,.webp,.zip" hidden>
+                    <div class="upload-content">
+                        <img src="{{ url_for('static', filename='upload.png') }}" alt="Upload" class="upload-icon">
+                        <p>Drag & drop file Anda di sini atau</p>
+                        <button class="btn-upload">Pilih File 🎯</button>
+                        <p class="file-types">Mendukung: JPG, PNG, PDF, DOC, DOCX</p>
+                    </div>
+                </div>
+                
+                <div class="algorithm-select" id="algorithmSelectWrapper">
+                    <label for="algorithm">Pilih Kompresi:</label>
+                    <select id="algorithm" name="algorithm">
+                        <option value="huffman">Huffman Coding (Teks)</option>
+                        <option value="rle">Run-Length Encoding (Teks)</option>
+                        <option value="lzw">LZW Compression (Teks)</option>
+                        <option value="jpeg">JPEG (Gambar)</option>
+                        <option value="webp">WebP (Gambar)</option>
+                        <option value="png">PNG (Gambar)</option>
+                        <option value="pdf">PDF Compress</option>
+                        <option value="docx">DOCX Compress</option>
+                        <option value="zip">ZIP Compress</option>
+                    </select>
+                </div>
+                <div class="quality-select" id="qualitySelectWrapper" style="display:none; margin-bottom:1.2rem;">
+                    <label for="quality">Kualitas Gambar:</label>
+                    <select id="quality" name="quality">
+                        <option value="90">90 (Tinggi)</option>
+                        <option value="70" selected>70 (Standar)</option>
+                        <option value="50">50 (Kecil)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-compress">Kompresi File</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="results" style="display: none;">
+        <div class="container">
+            <h2>Hasil Kompresi</h2>
+            <div class="results-content">
+                <div class="result-item">
+                    <h3>Ukuran Asli 📦</h3>
+                    <p id="originalSize">-</p>
+                </div>
+                <div class="result-item">
+                    <h3>Ukuran Setelah Kompresi 🎯</h3>
+                    <p id="compressedSize">-</p>
+                </div>
+                <div class="result-item">
+                    <h3>Persentase Pengurangan 🎉</h3>
+                    <p id="compressionRatio">-</p>
+                </div>
+            </div>
+            <button id="downloadBtn" class="btn-download">Download Hasil</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Kami 💝</h3>
+                    <p>Membantu Anda mengompres file dengan mudah dan cepat!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Fitur Unggulan ⭐</h3>
+                    <p>Kompresi cepat, aman, dan mudah digunakan!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hubungi Kami 💌</h3>
+                    <p>Ada pertanyaan? Hubungi kami!</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NRCompress. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
